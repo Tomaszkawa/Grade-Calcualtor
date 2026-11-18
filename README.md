@@ -44,11 +44,23 @@ flutter build web --release
 python3 -m http.server 46123 --bind 0.0.0.0 --directory build/web
 ```
 
-Potem otwórz: http://127.0.0.1:46123/
+Potem otwórz: http://127.0.0.1:46123/ **na tym samym komputerze**, na którym uruchomiłeś serwer.
 
-> Uwaga: `flutter run -d web-server` w trybie debug często wygląda na „niedziałający”
-> podgląd (czeka na rozszerzenie Dart Debug). Do zwykłego otwarcia w przeglądarce
-> używaj buildu release jak wyżej.
+> `127.0.0.1` w przeglądarce na Twoim laptopie ≠ serwer w chmurze agenta.
+> W Cursor Cloud użyj przekierowania portów (ikona wtyczki / Ports) albo GitHub Pages.
+>
+> `flutter run -d web-server` w trybie debug często wygląda na martwy podgląd
+> (czeka na rozszerzenie Dart Debug) — używaj buildu release jak wyżej.
+
+### GitHub Pages (publiczny podgląd)
+
+Gałąź `gh-pages` z buildem web jest już w repozytorium. Włącz Pages:
+
+1. Repo → **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: `gh-pages` / folder `/ (root)` → Save
+
+Adres: https://tomaszkawa.github.io/Grade-Calcualtor/
 
 ## Testy
 
