@@ -37,11 +37,18 @@ flutter pub get
 flutter run
 ```
 
-Podgląd w przeglądarce:
+Podgląd w przeglądarce (zalecane — build release + prosty serwer HTTP):
 
 ```bash
-flutter run -d web-server --web-hostname 0.0.0.0 --web-port 46123
+flutter build web --release
+python3 -m http.server 46123 --bind 0.0.0.0 --directory build/web
 ```
+
+Potem otwórz: http://127.0.0.1:46123/
+
+> Uwaga: `flutter run -d web-server` w trybie debug często wygląda na „niedziałający”
+> podgląd (czeka na rozszerzenie Dart Debug). Do zwykłego otwarcia w przeglądarce
+> używaj buildu release jak wyżej.
 
 ## Testy
 
